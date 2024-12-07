@@ -6,7 +6,9 @@ n_file_path = 'd://train.csv'
 home_data = pd.read_csv(n_file_path)
 
 #describe the data
-home_data.describe()
+a = home_data.describe()
 
 #calculate the mean of lot size
 lot_size = home_data['LotArea'].mean()
+
+print(a)
