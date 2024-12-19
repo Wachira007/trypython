@@ -1,5 +1,6 @@
 import pandas as pd
-from sklearn.tree import DecisionTreeRegressor 
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import mean_absolute_error
 #saving the file path to a variable
 n_file_path = 'd://train.csv'
 
@@ -41,3 +42,12 @@ print(X.head())
 print(nairobi_model.predict(X.head()))
 print("The actual prices are")
 print(y.head())
+
+#checking the mean absolute error
+
+#This might not be the best way to check the accuracy of the model
+#I need to split the data into training and validation sets
+predicted_home_prices = nairobi_model.predict(X)
+mae  = mean_absolute_error(y, predicted_home_prices)
+print("The mean absolute error is")
+print(mae)
